@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import ClearIcon from '@mui/icons-material/Clear';
 const  Cardlisting = ({cart}) => {
     const [CART, setCART] = useState([])
     const [name, setname] = useState(JSON.parse(localStorage.getItem('obj')))
@@ -11,6 +12,9 @@ useEffect(() => {
 useEffect(() => {
   setname(JSON.parse(localStorage.getItem('obj')))
 },[])
+
+
+
 
 // useEffect(() => {
 //   const storedCart = JSON.parse(localStorage.getItem('cart'));
@@ -28,10 +32,9 @@ useEffect(() => {
 
   return (
     <>
-      <h3>Welcome, {name?.fname} </h3>
-        {
+      <h3>Welcome, {name?.fname} <ClearIcon style={{marginLeft:'1600px' , fontSize:'45px', padding:'10px'}}  /> </h3>         {
             CART?.map((x,i)=>{
-            return <div className='mt-2 px-3 py-3' style={{border:'2px solid black'}} key={i}>
+            return <div className='mt-2 px-3 py-3'   style={{border:'2px solid black'}} key={i}  >
                 <h3>{x.id}</h3>
                 <img src={x.image} alt="" width={100} height={70} />
                 <h4>{x.title}</h4>
@@ -67,4 +70,4 @@ useEffect(() => {
   )
 }
 
-export default Cardlisting
+export default Cardlisting;

@@ -7,8 +7,7 @@ function SignUp() {
   const [str, setstr] = useState(JSON.parse(localStorage.getItem("obj")));
   const  navigate = useNavigate()
 
-
-  const SignupValidation = Yup.object({
+const SignupValidation = Yup.object({
     fname: Yup.string().min(5).required("Please Enter First Name"),
     lname: Yup.string().min(5).required("Please Enter Last Name"),
     age: Yup.number().required("Please Enter The Age"),
